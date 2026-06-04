@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#000;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.phone{width:390px;height:844px;border-radius:55px;overflow-y:auto;position:relative;border:8px solid #111;box-shadow:0 0 60px rgba(255,255,255,.15)}
+.phone::-webkit-scrollbar{width:0}
+.wallpaper{position:fixed;inset:0;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.7)),url('prathan1.jpeg');background-size:cover;background-position:center;z-index:-1}
+.content{padding:40px 20px;color:#fff}
+.title{text-align:center;font-size:30px;margin-bottom:10px}
+.subtitle{text-align:center;margin-bottom:25px}
+.flip-card{width:100%;height:220px;perspective:1000px;margin-bottom:20px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .8s;transform-style:preserve-3d}
+.flip-card.active .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:30px;overflow:hidden}
+.flip-card-front{background:rgba(255,255,255,.15);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff}
+.flip-card-back{transform:rotateY(180deg);background:#fff}
+.flip-card-back img{width:100%;height:100%;object-fit:cover}
+.next-btn{display:block;text-align:center;text-decoration:none;color:#fff;background:linear-gradient(45deg,#ff4f9a,#ff85c2);padding:15px;border-radius:40px;margin:25px 0}
+.hearts span{position:fixed;bottom:-50px;animation:float 10s linear infinite}
+@keyframes float{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-120vh);opacity:0}}
+</style>
+</head>
+<body>
+<audio autoplay loop><source src="Uyirey.mp3" type="audio/mpeg"></audio>
+<div class="wallpaper"></div>
+<div class="phone">
+<div class="content">
+<h1 class="title">📸 Our Beautiful Memories ❤️</h1>
+<p class="subtitle">Every memory has a story...</p>
+
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 First Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p2.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Cute Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p3.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Happy Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p4.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Favourite Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p5.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Crazy Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p6.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Golden Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p7.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Priceless Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p8.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Special Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p9.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Unforgettable Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p10.jpeg"></div></div></div>
+<div class="flip-card" onclick="this.classList.toggle('active')"><div class="flip-card-inner"><div class="flip-card-front"><h3>🔐 Forever Memory ❤️</h3><p>Click Me To View ❤️</p></div><div class="flip-card-back"><img src="p11.jpeg"></div></div></div>
+
+<a href="gift.html" class="next-btn">🎁 Open Next Surprise 🎁</a>
+</div></div>
+<div class="hearts"></div>
+<script>
+function createHeart(){const h=document.createElement('span');h.innerHTML='❤️';h.style.left=Math.random()*100+'%';document.querySelector('.hearts').appendChild(h);setTimeout(()=>h.remove(),10000);}
+setInterval(createHeart,400);
+</script>
+</body>
+</html>

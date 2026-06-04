@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gift Surprise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.phone{
+width:390px;
+height:844px;
+border-radius:55px;
+overflow-y:auto;
+position:relative;
+border:8px solid #111;
+box-shadow:0 0 60px rgba(255,255,255,.15);
+}
+
+.phone::-webkit-scrollbar{
+width:0;
+}
+
+.wallpaper{
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+rgba(0,0,0,.25),
+rgba(0,0,0,.70)
+),
+url('prathan1.jpeg');
+
+background-size:cover;
+background-position:center;
+
+z-index:-1;
+}
+
+.content{
+padding:40px 20px;
+color:white;
+text-align:center;
+}
+
+.title{
+font-size:32px;
+margin-bottom:20px;
+text-shadow:0 0 15px #ff85c2;
+}
+
+/* Gift Box */
+
+.gift-box{
+
+width:180px;
+height:180px;
+
+margin:30px auto;
+
+font-size:120px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+cursor:pointer;
+
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* Hidden Surprise */
+
+#surprise{
+
+display:none;
+
+animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.card{
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+padding:20px;
+
+border-radius:30px;
+
+margin-top:20px;
+
+line-height:1.8;
+}
+
+.certificate{
+
+margin-top:25px;
+
+padding:25px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+}
+
+.next-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border-radius:40px;
+
+background:linear-gradient(
+45deg,
+#ff4f9a,
+#ff85c2
+);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+}
+
+/* Confetti */
+
+.confetti{
+
+position:fixed;
+
+font-size:24px;
+
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+}
+
+100%{
+transform:translateY(100vh);
+}
+
+}
+
+/* Hearts */
+
+.hearts span{
+
+position:fixed;
+
+bottom:-50px;
+
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="Uyirey.mp3" type="audio/mpeg">
+</audio>
+
+<div class="phone">
+
+<div class="wallpaper"></div>
+
+<div class="content">
+
+<h1 class="title">
+🎁 Birthday Gift Box ❤️
+</h1>
+
+<p>
+Prathan Maplai ❤️
+</p>
+
+<div class="gift-box" onclick="openGift()">
+🎁
+</div>
+
+<div id="surprise">
+
+<div class="card">
+
+<h2>✨ Gift Unlocked ✨</h2>
+
+<br>
+
+❤️ Unlimited Happiness
+
+❤️ Unlimited Success
+
+❤️ Unlimited Smiles
+
+❤️ Unlimited Positive Vibes
+
+❤️ Unlimited Beautiful Memories
+
+</div>
+
+<div class="card">
+
+💌 Secret Message
+
+<br><br>
+
+Dear Prathan,
+
+Life la sila per dhaan
+namma life ah better aakkuraanga.
+
+Nee andha maari oru person ❤️
+
+Thank you for every laugh.
+
+Thank you for every memory.
+
+Thank you for being YOU ❤️
+
+</div>
+
+<div class="certificate">
+
+🏆 OFFICIAL CERTIFICATE
+
+<br><br>
+
+Presented To
+
+<br>
+
+❤️ PRATHAN ❤️
+
+<br><br>
+
+For Being
+
+<br>
+
+The Most Amazing Bestie
+
+<br><br>
+
+Validity: Lifetime ♾️
+
+<br><br>
+
+Signed By
+
+<br>
+
+Kavixx ❤️
+
+</div>
+
+<a href="final.html" class="next-btn">
+
+🎂 Continue To Final Surprise
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hearts"></div>
+
+<script>
+
+function openGift(){
+
+document.querySelector(".gift-box").style.display="none";
+
+document.getElementById("surprise").style.display="block";
+
+for(let i=0;i<60;i++){
+
+let conf=document.createElement("div");
+
+conf.className="confetti";
+
+conf.innerHTML=["🎉","✨","❤️","🎊"][Math.floor(Math.random()*4)];
+
+conf.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(conf);
+
+setTimeout(()=>{
+conf.remove();
+},4000);
+
+}
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("span");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+(20+Math.random()*20)+"px";
+
+heart.style.animationDuration=
+(6+Math.random()*5)+"s";
+
+document.querySelector(".hearts")
+.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>

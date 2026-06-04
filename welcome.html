@@ -9,7 +9,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome Prathan ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+<meta name="theme-color" content="#ff4f9a">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,7 +26,56 @@ padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
+/* MOBILE FULL SCREEN */
 
+@media (max-width:768px){
+
+body{
+margin:0;
+padding:0;
+overflow:hidden;
+background:#000;
+}
+
+.phone{
+
+width:100vw !important;
+height:100vh !important;
+
+border-radius:0 !important;
+
+border:none !important;
+
+box-shadow:none !important;
+
+margin:0 !important;
+
+}
+
+.content{
+padding-left:20px;
+padding-right:20px;
+}
+
+}
+
+/* SAFE AREA FOR IPHONE */
+
+@supports (padding:max(0px)) {
+
+.phone{
+
+padding-top:env(safe-area-inset-top);
+
+padding-bottom:env(safe-area-inset-bottom);
+
+padding-left:env(safe-area-inset-left);
+
+padding-right:env(safe-area-inset-right);
+
+}
+
+}
 body{
 min-height:100vh;
 display:flex;
